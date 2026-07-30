@@ -29,6 +29,10 @@
     {
       "src": "api/index.js",
       "use": "@vercel/node"
+    },
+    {
+      "src": "api/server/desktop.js",
+      "use": "@vercel/node"
     }
   ],
   "routes": [
