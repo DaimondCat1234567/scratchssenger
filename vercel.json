@@ -23,6 +23,10 @@
       "use": "@vercel/static"
     },
     {
+      "src": "desktop.html",
+      "use": "@vercel/static"
+    },
+    {
       "src": "api/index.js",
       "use": "@vercel/node"
     }
