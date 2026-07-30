@@ -2,7 +2,12 @@
   "name": "scratchssenger",
   "type": "module",
   "dependencies": {
-    "@vercel/node": "5.9.2",
+    "@vercel/node": "5.9.2"
+  },
+  "devDependencies": {
     "electron": "43.2.0"
+  },
+  "scripts": {
+    "desktop": "electron ./desktop/"
   }
 }
