@@ -1,4 +1,5 @@
 {
+  "name": "scratchssenger",
   "type": "module",
   "dependencies": {
     "@vercel/node": "5.9.2"
