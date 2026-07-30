@@ -7,6 +7,22 @@
       "use": "@vercel/static"
     },
     {
+      "src": "msngrv11.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "msngrv12.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "imsngrv13.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "msngrv144.html",
+      "use": "@vercel/static"
+    },
+    {
       "src": "api/index.js",
       "use": "@vercel/node"
     }
@@ -23,6 +39,22 @@
     {
       "src": "/index",
       "dest": "/index.html"
+    },
+    {
+      "src": "/msngrv11.html",
+      "dest": "/msngrv11.html"
+    },
+    {
+      "src": "/msngrv12.html",
+      "dest": "/msngrv12.html"
+    },
+    {
+      "src": "/msngrv13.html",
+      "dest": "/msngrv13.html"
+    },
+    {
+      "src": "/msngrv144.html",
+      "dest": "/msngrv144.html"
     },
     {
       "src": "/api/",
