@@ -73,8 +73,8 @@
       "dest": "/api/index.js"
     },
     {
-      "src": "/desktop/([^.]+)",
-      "dest": "/api/server/desktop?path=([^.]+)"
+      "src": "/desktop/(.*)",
+      "dest": "/api/server/desktop?path=$1"
     }
   ]
 }
