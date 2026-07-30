@@ -1,4 +1,4 @@
-import { releaseTag } from "../help/data.js"
+import { releaseStart } from "../help/data.js"
 
 export default async (req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*')
@@ -7,7 +7,13 @@ export default async (req, res) => {
 
   const { path } = req.query
 
-  res.status(200).json({
-    ok: true
-  })
+  const response = await fetch(`${releaseStart}${path}`)
+
+  const arrayBuffer = await response.arrayBuffer();
+  const buffer = Buffer.from(arrayBuffer);
+
+  const contentType = response.headers.get('content-type') || 'image/jpeg';
+  res.setHeader('Content-Type', contentType);
+
+  res.status(200).send(buffer);
 }
