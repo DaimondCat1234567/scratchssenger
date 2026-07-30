@@ -1,6 +1,6 @@
 import electron from "electron"
 import path from "node:path"
-const { app, BrowserWindow } = electron
+const { app, BrowserWindow, ipcMain } = electron
 
 const createWindow = () => {
   const win = new BrowserWindow({
@@ -15,6 +15,7 @@ const createWindow = () => {
 }
 
 app.whenReady().then(() => {
+  ipcMain.handle('ping', () => 'pong')
   createWindow()
 
   app.on('activate', () => {
