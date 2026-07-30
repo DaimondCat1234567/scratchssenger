@@ -74,7 +74,7 @@
     },
     {
       "src": "/desktop/(.*)",
-      "dest": "/api/server/desktop?path=$1"
+      "dest": "/api/server/desktop.js?path=$1"
     }
   ]
 }
