@@ -1,4 +1,4 @@
-import { repository } from "../help/data.js"
+import { releaseTag } from "../help/data.js"
 
 export default async (req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*')
