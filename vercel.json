@@ -57,6 +57,10 @@
       "dest": "/msngrv144.html"
     },
     {
+      "src": "/desktop.html",
+      "dest": "/desktop.html"
+    },
+    {
       "src": "/api/",
       "dest": "/api/index.js"
     }
