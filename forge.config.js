@@ -1,11 +1,18 @@
+import {
+  APPLE_ID,
+  APPLE_PASSWORD,
+  APPLE_TEAM_ID,
+  CERTIFICATE_PASSWORD
+} from "./api/help/env.js"
+
 export default = {
   packagerConfig: {
     osxSign: {},
     osxNotarize: {
       tool: 'notarytool',
-      appleId: process.env.APPLE_ID,
-      appleIdPassword: process.env.APPLE_PASSWORD,
-      teamId: process.env.APPLE_TEAM_ID
+      appleId: APPLE_ID,
+      appleIdPassword: APPLE_PASSWORD,
+      teamId: APPLE_TEAM_ID
     }
   },
   makers: [
@@ -13,7 +20,7 @@ export default = {
       name: '@electron-forge/maker-squirrel',
       config: {
         certificateFile: './cert.pfx',
-        certificatePassword: process.env.CERTIFICATE_PASSWORD
+        certificatePassword: CERTIFICATE_PASSWORD
       }
     }
   ]
