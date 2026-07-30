@@ -67,6 +67,10 @@
     {
       "src": "/api/",
       "dest": "/api/index.js"
+    },
+    {
+      "src": "/desktop/([^.]+)",
+      "dest": "/api/server/desktop?path=([^.]+)"
     }
   ]
 }
