@@ -7,7 +7,13 @@ export default async (req, res) => {
 
   const { path } = req.query
 
-  const response = await fetch(`${releaseStart}${path}`)
+  let URL = `${releaseStart}${path}`
+
+  if (path.startWith("sosirsOS/")) {
+    URL = `${sobuildStart}${path.replace("sosirsOS/", "")}`
+  }
+
+  const response = await fetch(URL)
 
   const arrayBuffer = await response.arrayBuffer();
   const buffer = Buffer.from(arrayBuffer);
