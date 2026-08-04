@@ -14,5 +14,6 @@ export {
   releaseStart,
   pathChats,
   pathUsers,
+  rawRepo,
   sobuildStart
 }
