@@ -1,1 +1,1 @@
-
+const generate = version => {}
