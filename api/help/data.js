@@ -5,7 +5,7 @@ const releaseStart = `${repository}archive/refs/tags/`
 const pathChats = `${root}chats`
 const pathUsers = `${root}users`
 const rawRepo = "https://raw.githubusercontent.com/DaimondCat1234567/scratchssenger/refs/heads/main/"
-const sobuildStart = `${ramRepo}sodesktop/builds/`
+const sobuildStart = `${rawRepo}sodesktop/builds/`
 
 export {
   project,
