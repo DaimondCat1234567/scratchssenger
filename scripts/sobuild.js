@@ -8,4 +8,6 @@ const type = await rl.question('Type: ');
 const version = await rl.question('Version: ');
 const versionFile = version.replaceAll(".", "")
 
+console.log(generate(type, version, versionFile))
+
 rl.close()
