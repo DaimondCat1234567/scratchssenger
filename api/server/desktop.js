@@ -9,7 +9,7 @@ export default async (req, res) => {
 
   let URL = `${releaseStart}${path}`
 
-  if (path.startWith("sosirsOS/")) {
+  if (path.startsWith("sosirsOS/")) {
     URL = `${sobuildStart}${path.replace("sosirsOS/", "")}`
   }
 
