@@ -1,17 +1,25 @@
 <html>
   <head>
     <title>Desktop</title>
+    <style>
+      *{
+        text-align: center
+      }
+    </style>
   </head>
   <body>
-    <h1 style="text-align: center">Desktop</h1>
-    <h2 style="text-align: center">1.4.4</h2>
+    <h1>Desktop</h1>
+    <h2>1.4.4</h2>
     <h3>Windows</h3>
     <button onclick="window.open('/desktop/windows.exe')">Install</button>
     <h3>Linux</h3>
-    <button onclick="window.open('/desktop/debian.deb')">Install on Debian/Ubuntu/Mint</button>
+    <button onclick="window.open('/desktop/debian.deb')">Install</button>
+    <p><em>Supported Distros: Debian, Ubuntu, Linux Mint</em></p>
     <h3>MacOS</h3>
     <button onclick="window.open('/desktop/macos.app')">Install</button>
-    <h3>sosirsOS</h3>
-    <button onclick="window.open('/desktop/sosirsOS.html')">Install HTML (sosirsOS 1.2.0 DEMO 6.1+)</button>
+    <p><em>You will need Settings to install because it is unsigned</em></p>
+    <h3>sosirsOS/KirOS Plus</h3>
+    <button onclick="window.open('/desktop/sosirsOS.html')">Install HTML</button>
+    <p><em>Supported Versions: sosirsOS 1.2.0 DEMO 6.1+, KirOS Plus 1.0+, KirOS 3.0 beta 1+, OneterOS 1.0 beta+</em></p>
   </body>
 </html>
