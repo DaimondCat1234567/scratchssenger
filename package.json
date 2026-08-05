@@ -13,6 +13,7 @@
     "electronforge:import": "npx electron-forge import",
     "desktop:package": "electron-forge package",
     "desktop:make": "electron-forge make",
-    "desktop:publish": "electron-forge publish"
+    "desktop:publish": "electron-forge publish",
+    "sobuild": "node ./scripts/sobuild"
   }
 }
