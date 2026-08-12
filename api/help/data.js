@@ -5,6 +5,8 @@ const repository = "https://github.com/daimondcat1234567/scratchssenger/"
 const releaseStart = `${repository}archive/refs/tags/`
 const pathChats = `${root}chats`
 const pathUsers = `${root}users`
+const chatsIndex = `${pathChats}/index.json`
+const usersIndex = `${pathUsers}/index.json`
 const rawRepo = "https://raw.githubusercontent.com/DaimondCat1234567/scratchssenger/refs/heads/main/"
 const sobuildStart = `${rawRepo}sodesktop/builds/`
 
@@ -16,6 +18,8 @@ export {
   releaseStart,
   pathChats,
   pathUsers,
+  chatsIndex,
+  usersIndex,
   rawRepo,
   sobuildStart
 }
