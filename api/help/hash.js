@@ -14,4 +14,17 @@ const genHash = async (meta) => {
   return hash.result
 }
 
-export { genHash }
+const checkHash = async (meta) => {
+  const hash = await (await fetch(`${DB_URL}/checkHash`, {
+    method: "GET",
+    body: JSON.stringtify({
+      org: meta.org,
+      user: meta.user,
+      hash: meta.hash,
+      DB_SECRET
+    })
+  })).json()
+  return hash.result
+}
+
+export { genHash, checkHash }
