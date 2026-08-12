@@ -5,7 +5,7 @@ class User {
     this.username = json.username || "unknown"
     this.password = json.password || ""
     this.id = json.id || null
-    this.session = json.session || new Session()
+    this.session = json.session || new Session({ user: json.username })
     this.groups = json.groups || []
     this.role = json.role || "user"
     this.joined = json.joined || String(new Date())
