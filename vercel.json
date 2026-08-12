@@ -27,6 +27,14 @@
       "use": "@vercel/static"
     },
     {
+      "src": "ICON.jpeg",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "api/server/register.js",
+      "use": "@vercel/node"
+    },
+    {
       "src": "api/index.js",
       "use": "@vercel/node"
     },
@@ -79,6 +87,10 @@
     {
       "src": "/desktop/(.*)",
       "dest": "/api/server/desktop.js?path=$1"
-    }
+    },
+    {
+      "src": "/api/register/",
+      "dest": "/api/server/register.js"
+    },
   ]
 }
