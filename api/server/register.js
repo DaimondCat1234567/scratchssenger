@@ -23,5 +23,5 @@ export default async (req, res) => {
   const user = new User({ username: login, password, id: Object.keys(indexUsers).length + 2 })
   indexUsers[login] = user.JSON
 
-  res.status(200).json(new Result(true, { id: user.id }));
+  res.status(200).json(new Result(true, { id: user.id }).result);
 }
