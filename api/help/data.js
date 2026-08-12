@@ -10,6 +10,7 @@ const sobuildStart = `${rawRepo}sodesktop/builds/`
 
 export {
   project,
+  projectGroup,
   root,
   repository,
   releaseStart,
