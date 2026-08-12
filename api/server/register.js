@@ -21,6 +21,7 @@ export default async (req, res) => {
     res.status(400).json({ ok: false, error: "account length limit" })
   }
   const user = new User({ username: login, password, id: Object.keys(indexUsers).length + 2 })
+  user.session = await new Session({ user: user.username }).token()
   indexUsers[login] = user.JSON
 
   res.status(200).json(new Result(true, { id: user.id }).result);
