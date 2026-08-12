@@ -69,6 +69,10 @@
       "dest": "/desktop.html"
     },
     {
+      "src": "/ICON.jpeg",
+      "dest": "/ICON.jpeg"
+    },
+    {
       "src": "/api/",
       "dest": "/api/index.js"
     },
