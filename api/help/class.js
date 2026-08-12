@@ -5,11 +5,14 @@ class User {
     this.username = json.username || "unknown"
     this.password = json.password || ""
     this.id = json.id || null
-    this.session = json.session || String(new Session())
+    this.session = json.session || new Session()
     this.groups = json.groups || []
     this.role = json.role || "user"
     this.joined = json.joined || String(new Date())
     this.active = json.active || String(new Date())
+  }
+  async setToken() {
+    this.session = await this.session.token()
   }
   JSON () {
     return {
