@@ -1,4 +1,4 @@
-import { genHash } from "../help/hash.js"
+import { genHash } from "./hash.js"
 
 class User {
   constructor (json) {
