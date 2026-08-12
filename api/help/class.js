@@ -50,8 +50,11 @@ class Session {
       active: this.active
     }
   }
+  async token () {
+    return await genHash(this)
+  }
   toString () {
-    return genHash(this)
+    return `ScratchssengerSession(${this.user})`
   }
 }
 
