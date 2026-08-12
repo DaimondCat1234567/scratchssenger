@@ -25,5 +25,5 @@ export default async (req, res) => {
   indexUsers[login] = user.JSON
   await write(usersIndex, indexUsers)
 
-  res.status(200).json(new Result(true, { id: user.id }));
+  res.status(200).json(new Result(true, { id: user.id }).result);
 }
