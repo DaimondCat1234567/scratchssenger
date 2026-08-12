@@ -1,6 +1,39 @@
-class User {}
+class User {
+  constructor (json) {
+    this.username = json.username || "unknown"
+    this.password = json.password || ""
+    this.id = json.id || null
+    this.session = json.session || String(new Session())
+    this.groups = json.groups || []
+    this.role = json.role || "user"
+    this.joined = json.joined || String(new Date())
+    this.active = json.active || String(new Date())
+  }
+  JSON () {
+    return {
+      username: this.username,
+      password: this.password,
+      id: this.id,
+      session: this.session,
+      groups: this.groups,
+      role: this.role,
+      joined: this.joined,
+      active: this.active
+    }
+  }
+  newActive () {
+    this.active = String(new Date())
+  }
+}
 class Chat {}
-class Result {}
+class Result {
+  constructor (ok, other) {
+    this.result = {
+      ok,
+      ...other
+    }
+  }
+}
 class Session {}
 
 export { User, Chat, Result, Session }
