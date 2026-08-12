@@ -9,7 +9,8 @@ const connect = async () => {
     },
     body: JSON.stringtify({
       DB_SECRET,
-      group: "DCG"
+      group: "DCG",
+      project: "scratchssenger"
     })
   })).json()
   return connecT
