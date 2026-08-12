@@ -1,3 +1,5 @@
+import { genHash } from "../help/hash.js"
+
 class User {
   constructor (json) {
     this.username = json.username || "unknown"
@@ -34,6 +36,23 @@ class Result {
     }
   }
 }
-class Session {}
+class Session {
+  constructor (data) {
+    this.date = data?.date || new Date()
+    this.user = data?.user || "unknown"
+    this.active = data?.active || "7d"
+    this.org = "DCG"
+  }
+  Export () {
+    return {
+      date: this.date,
+      user: this.user,
+      active: this.active
+    }
+  }
+  toString () {
+    return genHash(this)
+  }
+}
 
 export { User, Chat, Result, Session }
