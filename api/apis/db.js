@@ -1,5 +1,5 @@
 import { DB_URL, DB_SECRET } from "../help/env.js"
-import { project, root, pathChats, pathUsers } from "../help/data.js"
+import { project, projectGroup, root, pathChats, pathUsers } from "../help/data.js"
 
 const connect = async () => {
   const connecT = await (await fetch(`https://${DB_URL}/connect`, {
@@ -9,8 +9,8 @@ const connect = async () => {
     },
     body: JSON.stringtify({
       DB_SECRET,
-      group: "DCG",
-      project: "scratchssenger"
+      projectGroup,
+      project
     })
   })).json()
   return connecT
