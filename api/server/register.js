@@ -20,7 +20,7 @@ export default async (req, res) => {
   if (login.length < 3 || login.length > 23) {
     res.status(400).json({ ok: false, error: "account length limit" })
   }
-  const user = new User(login, password, Object.keys(indexUsers).length + 2)
+  const user = new User({ username: login, password, id: Object.keys(indexUsers).length + 2 })
   indexUsers[login] = user.JSON
 
   res.status(200).json(new Result(true, { id: user.id }));
