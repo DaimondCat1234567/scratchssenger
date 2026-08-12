@@ -43,7 +43,7 @@ class Session {
   constructor (data) {
     this.date = data?.date || new Date()
     this.user = data?.user || "unknown"
-    this.active = data?.active || "7d"
+    this.active = data?.active || 7 * 24 * 60 * 60
     this.org = "DCG"
   }
   Export () {
