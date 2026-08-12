@@ -41,6 +41,14 @@
     {
       "src": "api/server/desktop.js",
       "use": "@vercel/node"
+    },
+    {
+      "src": "api/server/login.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "internaldl.html",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
@@ -92,5 +100,13 @@
       "src": "/api/register/",
       "dest": "/api/server/register.js"
     },
+    {
+      "src": "/api/login/",
+      "dest": "/api/server/login.js"
+    },
+    {
+      "scr": "/internaldl.html",
+      "dest": "/internaldl.html"
+    }
   ]
 }
