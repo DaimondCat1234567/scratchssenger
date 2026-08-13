@@ -1,4 +1,4 @@
-import { genHash } from "./hash.js"
+import { genHash, checkHash } from "./hash.js"
 
 class User {
   constructor (json) {
@@ -55,6 +55,9 @@ class Session {
   }
   async token () {
     return await genHash(this)
+  }
+  async check () {
+    return await checkHash(this)
   }
   toString () {
     return `ScratchssengerSession(${this.user})`
