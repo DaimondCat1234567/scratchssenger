@@ -33,7 +33,33 @@ class User {
     this.active = String(new Date())
   }
 }
-class Chat {}
+class Message {}
+class Chat {
+  constructor (json) {
+    this.name = json.name || "Unknown Chat"
+    this.username = json.username || "unknown"
+    this.id = json.id || null
+    this.type = json.type || "group"
+    this.members = json.members || []
+    this.isE2EE = json.isE2EE || true
+    this.accessType = json.accessType || "private"
+    this.admins = json.admins || []
+    this.messages = json.messages || []
+  }
+  JSON () {
+    return {
+      name: this.name,
+      username: this.username,
+      id: this.id,
+      type: this.type,
+      members: this.members,
+      isE2EE: this.isE2EE,
+      accessType: this.accessType,
+      admins: this.admins,
+      messages: this.messages
+    }
+  }
+}
 class Result {
   constructor (ok, other) {
     this.result = {
