@@ -14,6 +14,9 @@ class User {
   async setToken() {
     this.session = await this.session.token()
   }
+  async checkSession() {
+    return await this.session.check()
+  }
   JSON () {
     return {
       username: this.username,
