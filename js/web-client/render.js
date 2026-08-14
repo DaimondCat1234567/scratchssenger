@@ -10,8 +10,10 @@ class HtmlElement {
     for (let i = 0; i < this.paramsKeys.length; i++) {
       if (this.paramsKeys[i] !== "onclick" && this.paramsKeys[i] !== "class" && this.paramsKeys[i] !== "for") {
         this.element[this.paramsKeys[i]] = this.params[this.paramsKeys[i]]
-      } else {
+      } else if (this.paramsKeys[i] === "class" || this.paramsKeys[i] === "for") {
         this.element.setAttribute(this.paramsKeys[i], this.params[this.paramsKeys[i]])
+      } else if (this.paramsKeys[i] === "onclick") {
+        this.element.onclick = this.params[this.paramsKeys[i]]
       }
     }
     return this.element
