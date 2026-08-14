@@ -42,8 +42,8 @@ const createApp = async (loadingV, screen) => {
       new HtmlElement("input", { id: "username" }, "").render(),
       new HtmlElement("label", { for: "password" }, "<br>Password: ").render(),
       new HtmlElement("input", { id: "password", type: "password" }, "").render(),
-      new HtmlElement("button", { onClick: handleLogin }, "Login").render(),
-      new HtmlElement("button", { onClick: handleLoginToRegister }, "Create account").render()
+      new HtmlElement("button", { onclick: handleLogin }, "Login").render(),
+      new HtmlElement("button", { onclick: handleLoginToRegister }, "Create account").render()
     ], "div")
     registerBar = new HtmlContent([
       new HtmlElement("h1", { style: "text-align: center" }, "Register").render(),
@@ -51,8 +51,8 @@ const createApp = async (loadingV, screen) => {
       new HtmlElement("input", { id: "username" }, "").render(),
       new HtmlElement("label", { for: "password" }, "<br>Password: ").render(),
       new HtmlElement("input", { id: "password", type: "password" }, "").render(),
-      new HtmlElement("button", { onClick: handleRegister }, "Register").render(),
-      new HtmlElement("button", { onClick: handleRegisterToLogin }, "Login account").render()
+      new HtmlElement("button", { onclick: handleRegister }, "Register").render(),
+      new HtmlElement("button", { onclick: handleRegisterToLogin }, "Login account").render()
     ], "div")
     leftBar.render()
     rightBar.render()
