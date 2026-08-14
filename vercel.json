@@ -43,6 +43,10 @@
       "use": "@vercel/static"
     },
     {
+      "src": "js/web-client/render.js",
+      "use": "@vercel/static"
+    },
+    {
       "src": "api/index.js",
       "use": "@vercel/node"
     },
@@ -115,6 +119,10 @@
     {
       "src": "/js/web-client/main.js",
       "dest": "/js/web-client/main.js"
+    },
+    {
+      "src": "/js/web-client/render.js",
+      "dest": "/js/web-client/render.js"
     },
     {
       "src": "/api/",
