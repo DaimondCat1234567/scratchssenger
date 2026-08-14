@@ -1,1 +1,33 @@
+import { read } from "../apis/db.js"
+import { chatsIndex, usersIndex } from "../help/data.js"
+import { User, Result } from "../help/class.js"
 
+export default async (req, res) => {
+  res.setHeader('Access-Control-Allow-Origin', '*')
+  res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS')
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type')
+
+  const { logig, session } = req.body
+
+  let indexUsers = JSON.parse(await read(usersIndex))
+  if (!Object.keys(indexUsers).includes(login)) {
+    res.status(403).json({ ok: false, error: "account not found" })
+  }
+  const user = new User(indexUsers[login])
+  if (user.session !== session) {
+    res.status(403).json({ ok: false, error: "fake token" })
+  }
+  const isActual = user.checkToken()
+  if (!checkActual) {
+    res.status(403).json({ ok: false, error: "token is old" })
+  }
+  const userJSON = user.JSON
+
+  res.status(200).json(new Result(true, {
+    result: {
+      name: userJSON.name,
+      username: userJSON.username,
+      id: userJSON.id
+    }
+  }).result);
+}
