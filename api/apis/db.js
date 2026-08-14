@@ -8,7 +8,7 @@ const connect = async () => {
       "content-type": "application/json",
       "bypass-tunnel-reminder": "true"
     },
-    body: JSON.stringtify({
+    body: JSON.stringify({
       DB_SECRET,
       projectGroup,
       project
@@ -24,7 +24,7 @@ const read = async (path) => {
       "content-type": "application/json",
       "bypass-tunnel-reminder": "true"
     },
-    body: JSON.stringtify({
+    body: JSON.stringify({
       DB_SECRET,
       projectGroup,
       project,
@@ -41,7 +41,7 @@ const write = async (path, newContent) => {
       "content-type": "application/json",
       "bypass-tunnel-reminder": "true"
     },
-    body: JSON.stringtify({
+    body: JSON.stringify({
       DB_SECRET,
       projectGroup,
       project,
