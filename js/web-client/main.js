@@ -1,17 +1,24 @@
 import { HtmlElement, root, HtmlContent } from "./render.js"
+import { AppName } from "../metadata.js"
 
-const leftBar = new HtmlContent([
-  new HtmlElement("div", { id: "messengerName", className: "messengerNameBar" }, "Scratchssenger").render(),
-  new HtmlElement("div", { id: "chatsBar", className: "chatsBar" }, "No chats!").render()
+let Load = "Loading..."
+
+let chatsBar = Load
+let chatNameBar = Load
+let messages = Load
+let messageInput = Load
+let leftBar = new HtmlContent([
+  new HtmlElement("div", { id: "messengerName", className: "messengerNameBar" }, AppName).render(),
+  new HtmlElement("div", { id: "chatsBar", className: "chatsBar" }, chatsBar).render()
 ], "div")
-const rightBar = new HtmlContent([
-  new HtmlElement("div", { id: "chatName", className: "chatNameBar" }, "Loading...").render(),
-  new HtmlElement("div", { id: "messages", className: "messages" }, "Loading...").render(),
-  new HtmlElement("div", { id: "messageInput", className: "messageInput" }, "Loading...").render()
+let rightBar = new HtmlContent([
+  new HtmlElement("div", { id: "chatName", className: "chatNameBar" }, chatNameBar).render(),
+  new HtmlElement("div", { id: "messages", className: "messages" }, messages).render(),
+  new HtmlElement("div", { id: "messageInput", className: "messageInput" }, messageInput).render()
 ], "div")
 leftBar.render()
 rightBar.render()
-const bodyContent = new HtmlContent([
+let bodyContent = new HtmlContent([
   new HtmlElement("div", { id: "leftBar", className: "leftBar" }, String(leftBar)).render(),
   new HtmlElement("div", { id: "rightBar", className: "rightBar" }, String(rightBar)).render()
 ], "div", "root", "app")
