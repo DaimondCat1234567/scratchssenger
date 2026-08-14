@@ -1,6 +1,6 @@
 import { HtmlElement, root, HtmlContent } from "./render.js"
 import { AppName } from "../metadata.js"
-import StartApp from "./App.js"
+import startApp from "./App.js"
 
 let Load = "Loading..."
 
