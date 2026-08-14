@@ -70,6 +70,33 @@
   </body>
   <script type="module" src="/js/web-client/main.js"></script>
   <script>
-    async function login() {}
+    async function login() {
+      try {
+        const login = await(await fetch("/api/login/", {
+          method: "POST",
+          body: JSON.stringify({
+            login: document.getElementById("username").value,
+            password: document.getElementById("password").value
+          })
+        })).json()
+        localStorage.setItem("login", document.getElementById("username").value)
+        localStorage.setItem("session", login.result.session)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    async function register() {
+      try {
+        await fetch("/api/register/", {
+          method: "POST",
+          body: JSON.stringify({
+            login: document.getElementById("username").value,
+            password: document.getElementById("password").value
+          })
+        })
+      } catch (error) {
+        console.log(error)
+      }
+    }
   </script>
 </html>
