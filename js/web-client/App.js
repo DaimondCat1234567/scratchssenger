@@ -9,16 +9,16 @@ const createApp = async (loadingV, screen) => {
   let messageInput = loadingV
   let [chatNameBar, leftBar, rightBar, bodyContent, loginBar, registerBar] = ""
   window.ScratchssengerData.loginType = "login"
-  const handleLogin() {
+  const handleLogin() = () => {
     login()
   }
-  const handleRegister() {
+  const handleRegister() = () => {
     register()
   }
-  const handleLoginToRegister() {
+  const handleLoginToRegister() = () => {
     window.ScratchssengerData.loginType = 'register'
   }
-  const handleRegisterToLogin() {
+  const handleRegisterToLogin() = () => {
     window.ScratchssengerData.loginType = 'login'
   }
   setTimeout(() => {
