@@ -38,14 +38,14 @@ const createApp = async (loadingV, screen) => {
 const startPolling = (wait) => {
   setTimeout(async () => {
     const session = await(await fetch("/api/session/", {
-      method: "GET",
+      method: "POST",
       body: JSON.stringify({
         login: localStorage.getItem("login"),
         session: localStorage.getItem("session")
       })
     })).json()
     const chats = await(await fetch("/api/session/chats/", {
-      method: "GET",
+      method: "POST",
       body: JSON.stringify({
         login: localStorage.getItem("login"),
         session: localStorage.getItem("session")
