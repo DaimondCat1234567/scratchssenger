@@ -39,7 +39,7 @@
       "use": "@vercel/static"
     },
     {
-      "src": "js/web-client-main.js",
+      "src": "js/web-client/main.js",
       "use": "@vercel/static"
     },
     {
@@ -113,8 +113,8 @@
       "dest": "/web-client.html"
     },
     {
-      "src": "/js/web-client-main.js",
-      "dest": "/js/web-client-main.js"
+      "src": "/js/web-client/main.js",
+      "dest": "/js/web-client/main.js"
     },
     {
       "src": "/api/",
