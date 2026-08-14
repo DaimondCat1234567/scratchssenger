@@ -32,4 +32,4 @@ let bodyContent = new HtmlContent([
 bodyContent.render()
 
 root.innerHTML = String(bodyContent)
-startApp(Load, document.getElementById("content"))
+startApp(Load, root)
