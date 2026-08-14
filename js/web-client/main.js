@@ -14,7 +14,7 @@ rightBar.render()
 const bodyContent = new HtmlContent([
   new HtmlElement("div", { id: "leftBar", class: "leftBar" }, String(leftBar)).render(),
   new HtmlElement("div", { id: "rightBar", class: "rightBar" }, String(rightBar)).render()
-], "div", "root")
+], "div", "root", "app")
 bodyContent.render()
 
 root.innerHTML = String(bodyContent)
