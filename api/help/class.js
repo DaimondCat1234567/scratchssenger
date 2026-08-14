@@ -6,10 +6,11 @@ class User {
     this.password = json.password || ""
     this.id = json.id || null
     this.session = json.session || new Session({ user: json.username })
-    this.groups = json.groups || []
+    this.chats = json.chats || []
     this.role = json.role || "user"
     this.joined = json.joined || String(new Date())
     this.active = json.active || String(new Date())
+    this.name = json.name || ""
   }
   async setToken() {
     this.session = await this.session.token()
@@ -17,23 +18,26 @@ class User {
   async checkSession() {
     return await this.session.check()
   }
-  JSON () {
+  get JSON {
     return {
       username: this.username,
       password: this.password,
       id: this.id,
       session: this.session,
-      groups: this.groups,
+      chats: this.chats,
       role: this.role,
       joined: this.joined,
-      active: this.active
+      active: this.active,
+      name: this.name
     }
   }
   newActive () {
     this.active = String(new Date())
   }
+  toString() {
+    return `User(${this.username})`
+  }
 }
-class Message {}
 class Chat {
   constructor (json) {
     this.name = json.name || "Unknown Chat"
@@ -45,8 +49,9 @@ class Chat {
     this.accessType = json.accessType || "private"
     this.admins = json.admins || []
     this.messages = json.messages || []
+    this.e2ee = json.e2ee || {}
   }
-  JSON () {
+  get JSON {
     return {
       name: this.name,
       username: this.username,
@@ -56,7 +61,8 @@ class Chat {
       isE2EE: this.isE2EE,
       accessType: this.accessType,
       admins: this.admins,
-      messages: this.messages
+      messages: this.messages,
+      e2ee: this.e2ee
     }
   }
 }
@@ -75,7 +81,7 @@ class Session {
     this.active = data?.active || 7 * 24 * 60 * 60
     this.org = "DCG"
   }
-  Export () {
+  get Export {
     return {
       date: this.date,
       user: this.user,
@@ -92,5 +98,21 @@ class Session {
     return `ScratchssengerSession(${this.user})`
   }
 }
+class Message {
+  constructor (data) {
+    this.author = data.author || "unknown"
+    this.text = data.text || ""
+    this.date = data.date || new Date()
+    this.id = data.id || 0
+  }
+  get JSON {
+    return {
+      author: this.author,
+      text: this.text,
+      date: this.date,
+      id: this.id
+    }
+  }
+}
 
-export { User, Chat, Result, Session }
+export { User, Chat, Result, Session, Message }
