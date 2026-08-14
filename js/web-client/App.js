@@ -31,7 +31,7 @@ const createApp = async (loading, screen) => {
     bodyContent.render()
 
     screen.innerHTML = bodyContent
-  })
+  }, 1000)
 }
 
 export default createApp
