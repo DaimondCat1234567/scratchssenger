@@ -35,4 +35,23 @@ const createApp = async (loadingV, screen) => {
   }, 1000)
 }
 
-export default createApp
+const startPolling = (wait) => {
+  setTimeout(async () => {
+    const session = await(await fetch("/api/session/", {
+      method: "GET",
+      body: JSON.stringtify({
+        login: localStorage.get("login"),
+        password: localStorage.get("password")
+      })
+    })).json()
+    const chats = await(await fetch("/api/session/chats/", {
+      method: "GET",
+      body: JSON.stringtify({
+        login: localStorage.get("login"),
+        password: localStorage.get("password")
+      })
+    })).json()
+  }, wait * 1000)
+}
+
+export { createApp as default, startPolling }
