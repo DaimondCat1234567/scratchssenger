@@ -65,6 +65,13 @@ class Chat {
       e2ee: this.e2ee
     }
   }
+  sendMessage (data) {
+    const message = new Message(data)
+    this.messages.push(message.JSON)
+  }
+  newMember (username) {
+    this.members.push(username)
+  }
 }
 class Result {
   constructor (ok, other) {
