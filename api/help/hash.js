@@ -2,7 +2,7 @@ import { DB_URL, DB_SECRET } from "../help/env.js"
 
 const genHash = async (meta) => {
   const hash = await (await fetch(`${DB_URL}/genHash`, {
-    method: "GET",
+    method: "POST",
     body: JSON.stringify({
       org: meta.org,
       user: meta.user,
@@ -16,7 +16,7 @@ const genHash = async (meta) => {
 
 const checkHash = async (meta) => {
   const hash = await (await fetch(`${DB_URL}/checkHash`, {
-    method: "GET",
+    method: "POST",
     body: JSON.stringify({
       org: meta.org,
       user: meta.user,
