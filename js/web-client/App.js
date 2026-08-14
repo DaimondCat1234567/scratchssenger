@@ -28,7 +28,7 @@ const createApp = async (loadingV, screen) => {
     bodyContent = new HtmlContent([
       new HtmlElement("div", { id: "leftBar", className: "leftBar" }, String(leftBar)).render(),
       new HtmlElement("div", { id: "rightBar", className: "rightBar" }, String(rightBar)).render()
-    ], "div")
+    ], "div", "content", "app")
     bodyContent.render()
 
     screen.innerHTML = String(bodyContent)
