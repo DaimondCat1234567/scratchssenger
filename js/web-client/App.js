@@ -7,7 +7,8 @@ const createApp = async (loadingV, screen) => {
   let chatMembers = loadingV
   let messages = loadingV
   let messageInput = loadingV
-  let [chatNameBar, leftBar, rightBar, bodyContent, loginBar] = ""
+  let [chatNameBar, leftBar, rightBar, bodyContent, loginBar, registerBar] = ""
+  window.ScratchssengerData.loginType = "login"
   setTimeout(() => {
     chatNameBar = new HtmlContent([
       new HtmlElement("h1", {}, chatName).render(),
@@ -29,21 +30,39 @@ const createApp = async (loadingV, screen) => {
       new HtmlElement("input", { id: "username" }, "").render(),
       new HtmlElement("label", { for: "password" }, "<br>Password: ").render(),
       new HtmlElement("input", { id: "password", type: "password" }, "").render(),
-      new HtmlElement("button", { onClick: "login()" }, "Login").render()
+      new HtmlElement("button", { onClick: "login()" }, "Login").render(),
+      new HtmlElement("button", { onClick: "window.ScratchssengerData.loginType = 'register'" }, "Create account").render()
+    ], "div")
+    registerBar = new HtmlContent([
+      new HtmlElement("h1", { style: "text-align: center" }, "Register").render(),
+      new HtmlElement("label", { for: "username" }, "Username: ").render(),
+      new HtmlElement("input", { id: "username" }, "").render(),
+      new HtmlElement("label", { for: "password" }, "<br>Password: ").render(),
+      new HtmlElement("input", { id: "password", type: "password" }, "").render(),
+      new HtmlElement("button", { onClick: "register()" }, "Register").render(),
+      new HtmlElement("button", { onClick: "window.ScratchssengerData.loginType = 'login'" }, "Login account").render()
     ], "div")
     leftBar.render()
     rightBar.render()
     loginBar.render()
+    registerBar.render()
     if (window.ScratchssengerData.isLogin) {
       bodyContent = new HtmlContent([
         new HtmlElement("div", { id: "leftBar", className: "leftBar" }, String(leftBar)).render(),
         new HtmlElement("div", { id: "rightBar", className: "rightBar" }, String(rightBar)).render()
       ], "div", "content", "app")
     } else {
-      bodyContent = new HtmlContent([
-        new HtmlElement("div", { id: "leftBar", className: "leftBar" }, String(loginBar)).render(),
-        new HtmlElement("div", { id: "rightBar", className: "rightBar" }, "").render()
-      ], "div", "content", "app")
+      if (window.ScratchssengerData.loginType === "login") {
+        bodyContent = new HtmlContent([
+          new HtmlElement("div", { id: "leftBar", className: "leftBar" }, String(loginBar)).render(),
+          new HtmlElement("div", { id: "rightBar", className: "rightBar" }, "").render()
+        ], "div", "content", "app")
+      } else {
+        bodyContent = new HtmlContent([
+          new HtmlElement("div", { id: "leftBar", className: "leftBar" }, String(registerBar)).render(),
+          new HtmlElement("div", { id: "rightBar", className: "rightBar" }, "").render()
+        ], "div", "content", "app")
+      }
     }
     bodyContent.render()
 
