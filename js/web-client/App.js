@@ -7,7 +7,7 @@ const createApp = async (loadingV, screen) => {
   let chatMembers = loadingV
   let messages = loadingV
   let messageInput = loadingV
-  let [chatNameBar, leftBar, rightBar, bodyContent] = ""
+  let [chatNameBar, leftBar, rightBar, bodyContent, loginBar] = ""
   setTimeout(() => {
     chatNameBar = new HtmlContent([
       new HtmlElement("h1", {}, chatName).render(),
@@ -22,6 +22,13 @@ const createApp = async (loadingV, screen) => {
       new HtmlElement("div", { id: "chatName", className: "chatNameBar" }, chatNameBar).render(),
       new HtmlElement("div", { id: "messages", className: "messages" }, messages).render(),
       new HtmlElement("div", { id: "messageInput", className: "messageInput" }, messageInput).render()
+    ], "div")
+    loginBar = new HtmlContent([
+      new HtmlElement("h1", { style: "text-align: center" }, "Login").render(),
+      new HtmlElement("label", { for: "username" }, "Username: ").render(),
+      new HtmlElement("input", { id: "username" }, "").render(),
+      new HtmlElement("label", { for: "password" }, "Password: ").render(),
+      new HtmlElement("input", { id: "password", type: "password" }, "").render(),
     ], "div")
     leftBar.render()
     rightBar.render()
