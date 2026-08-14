@@ -40,15 +40,15 @@ const startPolling = (wait) => {
     const session = await(await fetch("/api/session/", {
       method: "GET",
       body: JSON.stringtify({
-        login: localStorage.get("login"),
-        session: localStorage.get("session")
+        login: localStorage.getItem("login"),
+        session: localStorage.getItem("session")
       })
     })).json()
     const chats = await(await fetch("/api/session/chats/", {
       method: "GET",
       body: JSON.stringtify({
-        login: localStorage.get("login"),
-        session: localStorage.get("password")
+        login: localStorage.getItem("login"),
+        session: localStorage.getItem("session")
       })
     })).json()
   }, wait * 1000)
