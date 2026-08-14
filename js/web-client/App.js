@@ -27,8 +27,9 @@ const createApp = async (loadingV, screen) => {
       new HtmlElement("h1", { style: "text-align: center" }, "Login").render(),
       new HtmlElement("label", { for: "username" }, "Username: ").render(),
       new HtmlElement("input", { id: "username" }, "").render(),
-      new HtmlElement("label", { for: "password" }, "Password: ").render(),
+      new HtmlElement("label", { for: "password" }, "<br>Password: ").render(),
       new HtmlElement("input", { id: "password", type: "password" }, "").render(),
+      new HtmlElement("button", { onClick: "login()" }, "Login").render()
     ], "div")
     leftBar.render()
     rightBar.render()
