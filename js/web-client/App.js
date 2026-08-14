@@ -1,12 +1,12 @@
 import { HtmlElement, HtmlContent } from "./render.js"
 import { AppName } from "../metadata.js"
 
-const createApp = async (loading, screen) => {
-  let chatsBar = loading
-  let chatName = loading
-  let chatMembers = loading
-  let messages = loading
-  let messageInput = loading
+const createApp = async (loadingV, screen) => {
+  let chatsBar = loadingV
+  let chatName = loadingV
+  let chatMembers = loadingV
+  let messages = loadingV
+  let messageInput = loadingV
   let [chatNameBar, leftBar, rightBar, bodyContent] = ""
   setTimeout(() => {
     chatNameBar = new HtmlContent([
