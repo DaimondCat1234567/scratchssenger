@@ -1,5 +1,6 @@
 import { HtmlElement, root, HtmlContent } from "./render.js"
 import { AppName } from "../metadata.js"
+import StartApp from "./App.js"
 
 let Load = "Loading..."
 
@@ -27,7 +28,8 @@ rightBar.render()
 let bodyContent = new HtmlContent([
   new HtmlElement("div", { id: "leftBar", className: "leftBar" }, String(leftBar)).render(),
   new HtmlElement("div", { id: "rightBar", className: "rightBar" }, String(rightBar)).render()
-], "div", "root", "app")
+], "div", "content", "app")
 bodyContent.render()
 
 root.innerHTML = String(bodyContent)
+startApp(Load, document.getElementById("content"))
