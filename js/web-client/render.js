@@ -27,7 +27,7 @@ class HtmlContent {
     for (let i = 0; i < this.content.length; i++) {
       this.element.appendChild(this.content[i])
     }
-    if (this.class) this.element.class = this.class
+    if (this.class) this.element.className = this.class
     if (this.id) this.element.id = this.id
     if (this.css) this.element.style = this.css
     if (this.onclick) this.element.onclick = this.onclick
