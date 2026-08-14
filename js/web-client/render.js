@@ -7,7 +7,7 @@ class HtmlElement {
     this.element.innerHTML = content
   }
   render () {
-    for (let i = 0; i <= this.paramsKeys.length; i++) {
+    for (let i = 0; i < this.paramsKeys.length; i++) {
       this.element[this.paramsKeys[i]] = this.params[this.paramsKeys[i]]
     }
     return this.element
