@@ -25,7 +25,6 @@ class HtmlContent {
   }
   render () {
     for (let i = 0; i < this.content.length; i++) {
-      this.content[i].render()
       this.element.appendChild(this.content[i])
     }
     if (this.class) this.element.class = this.class
