@@ -47,6 +47,10 @@
       "use": "@vercel/static"
     },
     {
+      "src": "js/metadata.js",
+      "use": "@vercel/static"
+    },
+    {
       "src": "api/index.js",
       "use": "@vercel/node"
     },
@@ -123,6 +127,10 @@
     {
       "src": "/js/web-client/render.js",
       "dest": "/js/web-client/render.js"
+    },
+    {
+      "src": "/js/metadata.js",
+      "dest": "/js/metadata.js"
     },
     {
       "src": "/api/",
