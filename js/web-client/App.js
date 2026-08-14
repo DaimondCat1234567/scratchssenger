@@ -30,8 +30,8 @@ const createApp = async (loadingV, screen) => {
       new HtmlElement("input", { id: "username" }, "").render(),
       new HtmlElement("label", { for: "password" }, "<br>Password: ").render(),
       new HtmlElement("input", { id: "password", type: "password" }, "").render(),
-      new HtmlElement("button", { onClick: "login()" }, "Login").render(),
-      new HtmlElement("button", { onClick: "window.ScratchssengerData.loginType = 'register'" }, "Create account").render()
+      new HtmlElement("button", { onClick: () => { login() } }, "Login").render(),
+      new HtmlElement("button", { onClick: () => { window.ScratchssengerData.loginType = 'register' } }, "Create account").render()
     ], "div")
     registerBar = new HtmlContent([
       new HtmlElement("h1", { style: "text-align: center" }, "Register").render(),
@@ -39,8 +39,8 @@ const createApp = async (loadingV, screen) => {
       new HtmlElement("input", { id: "username" }, "").render(),
       new HtmlElement("label", { for: "password" }, "<br>Password: ").render(),
       new HtmlElement("input", { id: "password", type: "password" }, "").render(),
-      new HtmlElement("button", { onClick: "register(); window.ScratchssengerData.loginType = 'login'" }, "Register").render(),
-      new HtmlElement("button", { onClick: "window.ScratchssengerData.loginType = 'login'" }, "Login account").render()
+      new HtmlElement("button", { onClick: () => { register(); window.ScratchssengerData.loginType = 'login' } }, "Register").render(),
+      new HtmlElement("button", { onClick: () => { window.ScratchssengerData.loginType = 'login' } }, "Login account").render()
     ], "div")
     leftBar.render()
     rightBar.render()
