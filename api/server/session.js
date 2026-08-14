@@ -7,7 +7,7 @@ export default async (req, res) => {
   res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS')
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type')
 
-  const { logig, session } = req.body
+  const { login, session } = req.body
 
   let indexUsers = JSON.parse(await read(usersIndex))
   if (!Object.keys(indexUsers).includes(login)) {
@@ -17,7 +17,7 @@ export default async (req, res) => {
   if (user.session !== session) {
     res.status(403).json({ ok: false, error: "fake token" })
   }
-  const isActual = user.checkToken()
+  const isActual = await user.checkToken()
   if (!checkActual) {
     res.status(403).json({ ok: false, error: "token is old" })
   }
