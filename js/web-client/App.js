@@ -31,7 +31,7 @@ const createApp = async (loadingV, screen) => {
     ], "div")
     bodyContent.render()
 
-    screen.innerHTML = bodyContent
+    screen.innerHTML = String(bodyContent)
   }, 1000)
 }
 
