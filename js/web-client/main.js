@@ -4,7 +4,13 @@ import { AppName } from "../metadata.js"
 let Load = "Loading..."
 
 let chatsBar = Load
-let chatNameBar = Load
+let chatName = Load
+let chatMembers = Load
+let chatNameBar = new HtmlContent([
+  new HtmlElement("h1", {}, chatName).render(),
+  new HtmlElement("span", {}, chatMembers).render()
+], "div")
+chatNameBar.render()
 let messages = Load
 let messageInput = Load
 let leftBar = new HtmlContent([
