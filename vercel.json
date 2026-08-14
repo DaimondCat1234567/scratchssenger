@@ -47,6 +47,14 @@
       "use": "@vercel/node"
     },
     {
+      "src": "api/server/session.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "api/server/session-chats.js",
+      "use": "@vercel/node"
+    },
+    {
       "src": "internaldl.html",
       "use": "@vercel/static"
     }
@@ -103,6 +111,14 @@
     {
       "src": "/api/login/",
       "dest": "/api/server/login.js"
+    },
+    {
+      "src": "/api/session/",
+      "dest": "/api/server/session.js"
+    },
+    {
+      "src": "/api/session/chats/",
+      "dest": "/api/server/session-chats.js"
     },
     {
       "src": "/internaldl.html",
