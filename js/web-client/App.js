@@ -39,14 +39,14 @@ const startPolling = (wait) => {
   setTimeout(async () => {
     const session = await(await fetch("/api/session/", {
       method: "GET",
-      body: JSON.stringtify({
+      body: JSON.stringify({
         login: localStorage.getItem("login"),
         session: localStorage.getItem("session")
       })
     })).json()
     const chats = await(await fetch("/api/session/chats/", {
       method: "GET",
-      body: JSON.stringtify({
+      body: JSON.stringify({
         login: localStorage.getItem("login"),
         session: localStorage.getItem("session")
       })
