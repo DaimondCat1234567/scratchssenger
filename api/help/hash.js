@@ -3,7 +3,7 @@ import { DB_URL, DB_SECRET } from "../help/env.js"
 const genHash = async (meta) => {
   const hash = await (await fetch(`${DB_URL}/genHash`, {
     method: "GET",
-    body: JSON.stringtify({
+    body: JSON.stringify({
       org: meta.org,
       user: meta.user,
       date: meta.date,
@@ -17,7 +17,7 @@ const genHash = async (meta) => {
 const checkHash = async (meta) => {
   const hash = await (await fetch(`${DB_URL}/checkHash`, {
     method: "GET",
-    body: JSON.stringtify({
+    body: JSON.stringify({
       org: meta.org,
       user: meta.user,
       hash: meta.hash,
