@@ -31,8 +31,16 @@
       "use": "@vercel/static"
     },
     {
-      "src": "api/server/register.js",
-      "use": "@vercel/node"
+      "src": "internaldl.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "web-client.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "js/web-client-main.js",
+      "use": "@vercel/static"
     },
     {
       "src": "api/index.js",
@@ -40,6 +48,10 @@
     },
     {
       "src": "api/server/desktop.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "api/server/register.js",
       "use": "@vercel/node"
     },
     {
@@ -53,10 +65,6 @@
     {
       "src": "api/server/session-chats.js",
       "use": "@vercel/node"
-    },
-    {
-      "src": "internaldl.html",
-      "use": "@vercel/static"
     }
   ],
   "routes": [
@@ -97,6 +105,18 @@
       "dest": "/ICON.jpeg"
     },
     {
+      "src": "/internaldl.html",
+      "dest": "/internaldl.html"
+    },
+    {
+      "src": "/web-client.html",
+      "dest": "/web-client.html"
+    },
+    {
+      "src": "/js/web-client-main.js",
+      "dest": "/js/web-client-main.js"
+    },
+    {
       "src": "/api/",
       "dest": "/api/index.js"
     },
@@ -119,10 +139,6 @@
     {
       "src": "/api/session/chats/",
       "dest": "/api/server/session-chats.js"
-    },
-    {
-      "src": "/internaldl.html",
-      "dest": "/internaldl.html"
     }
   ]
 }
