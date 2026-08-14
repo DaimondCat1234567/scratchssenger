@@ -5,8 +5,8 @@ const chatBar = new HtmlContent()
 chatsBar.render()
 charBar.render()
 const bodyContent = new HtmlContent([
-  new HtmlElement("div", { id: "chats", class: "chatsBar", String(chatsBar) }),
-  new HtmlElement("div", { id: "chatBar", class: "chatBar", String(chatBar) })
+  new HtmlElement("div", { id: "chats", class: "chatsBar" }, String(chatsBar)),
+  new HtmlElement("div", { id: "chatBar", class: "chatBar" }, String(chatsBar))
 ], "div", "root")
 bodyContent.render()
 
