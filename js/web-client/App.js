@@ -39,7 +39,7 @@ const createApp = async (loadingV, screen) => {
       new HtmlElement("input", { id: "username" }, "").render(),
       new HtmlElement("label", { for: "password" }, "<br>Password: ").render(),
       new HtmlElement("input", { id: "password", type: "password" }, "").render(),
-      new HtmlElement("button", { onClick: "register()" }, "Register").render(),
+      new HtmlElement("button", { onClick: "register(); window.ScratchssengerData.loginType = 'login'" }, "Register").render(),
       new HtmlElement("button", { onClick: "window.ScratchssengerData.loginType = 'login'" }, "Login account").render()
     ], "div")
     leftBar.render()
