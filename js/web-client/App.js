@@ -32,10 +32,18 @@ const createApp = async (loadingV, screen) => {
     ], "div")
     leftBar.render()
     rightBar.render()
-    bodyContent = new HtmlContent([
-      new HtmlElement("div", { id: "leftBar", className: "leftBar" }, String(leftBar)).render(),
-      new HtmlElement("div", { id: "rightBar", className: "rightBar" }, String(rightBar)).render()
-    ], "div", "content", "app")
+    loginBar.render()
+    if (window.ScratchssengerData.isLogin) {
+      bodyContent = new HtmlContent([
+        new HtmlElement("div", { id: "leftBar", className: "leftBar" }, String(leftBar)).render(),
+        new HtmlElement("div", { id: "rightBar", className: "rightBar" }, String(rightBar)).render()
+      ], "div", "content", "app")
+    } else {
+      bodyContent = new HtmlContent([
+        new HtmlElement("div", { id: "leftBar", className: "leftBar" }, String(loginBar)).render(),
+        new HtmlElement("div", { id: "rightBar", className: "rightBar" }, "").render()
+      ], "div", "content", "app")
+    }
     bodyContent.render()
 
     screen.innerHTML = String(bodyContent)
@@ -44,13 +52,15 @@ const createApp = async (loadingV, screen) => {
 
 const startPolling = (wait) => {
   setTimeout(async () => {
-    const session = await(await fetch("/api/session/", {
+    const oSession = await fetch("/api/session/", {
       method: "POST",
       body: JSON.stringify({
         login: localStorage.getItem("login"),
         session: localStorage.getItem("session")
       })
-    })).json()
+    })
+    window.ScratchssengerData.isLogin = oSession.ok
+    const session = await(oSession).json()
     const chats = await(await fetch("/api/session/chats/", {
       method: "POST",
       body: JSON.stringify({
