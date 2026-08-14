@@ -18,7 +18,7 @@ class User {
   async checkSession() {
     return await this.session.check()
   }
-  get JSON {
+  get JSON () {
     return {
       username: this.username,
       password: this.password,
@@ -51,7 +51,7 @@ class Chat {
     this.messages = json.messages || []
     this.e2ee = json.e2ee || {}
   }
-  get JSON {
+  get JSON () {
     return {
       name: this.name,
       username: this.username,
@@ -81,7 +81,7 @@ class Session {
     this.active = data?.active || 7 * 24 * 60 * 60
     this.org = "DCG"
   }
-  get Export {
+  get Export () {
     return {
       date: this.date,
       user: this.user,
@@ -105,7 +105,7 @@ class Message {
     this.date = data.date || new Date()
     this.id = data.id || 0
   }
-  get JSON {
+  get JSON () {
     return {
       author: this.author,
       text: this.text,
