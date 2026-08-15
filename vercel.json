@@ -112,6 +112,10 @@
       "src": "/desktop.html",
       "dest": "/desktop.html"
     },
+        {
+      "src": "/web.html",
+      "dest": "/web.html"
+    },
     {
       "src": "/ICON.jpeg",
       "dest": "/ICON.jpeg"
