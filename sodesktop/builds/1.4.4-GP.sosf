@@ -1,0 +1,15 @@
+{
+  fileType: 'GeometryPlay',
+  fileVersion: '0.1',
+  launchVersion: '0.1',
+  gpUrl: 'https://scratchssenger.vercel.app/msngrv144.html',
+  commentsForScratchssenger: {
+    version: '1.4.4',
+    versions: {
+      node: undefined,
+      v8: undefined,
+      generatedBy: 'https://github.com/scrajang-studios/scratchssenger/blob/main/sodesktop/build.js'
+    },
+    title: 'scratchssenger'
+  }
+}
