@@ -1,5 +1,7 @@
+let wait = 5
+let LocalData = {}
+
 try {
-    let LocalData = {}
     setTimeout(async () => {
         const oSession = await fetch("https://dcgapi.loca.lt/scratchssenger/session/", {
             method: "POST",
@@ -29,4 +31,9 @@ try {
         type: "error",
         error
     })
+}
+self.onmessage = (data) => {
+    if (data.type === "setWait") {
+        wait = data.wait
+    }
 }

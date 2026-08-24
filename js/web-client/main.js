@@ -1,6 +1,6 @@
 import { HtmlElement, root, HtmlContent } from "./render.js"
 import { AppName } from "../metadata.js"
-import startApp, {startPolling} from "./App.js"
+import startApp from "./App.js"
 
 let Load = "Loading..."
 
@@ -35,4 +35,3 @@ root.innerHTML = String(bodyContent)
 window.ScratchssengerData = {}
 window.scratchssenger = {}
 startApp(Load, root)
-startPolling(5)
