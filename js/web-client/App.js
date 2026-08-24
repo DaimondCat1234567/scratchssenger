@@ -84,6 +84,16 @@ const createApp = async (loadingV, screen) => {
 
 const startPolling = (wait) => {
   window.scratchssenger.polling = new Worker('./polling.js')
+  window.scratchssenger.polling.onmessage = (data) => {
+    if (data.type === 'error') {
+      console.error(data.error)
+      alert(data.error.message)
+    } else if (data.type === 'dataUpdate') {
+      window.ScratchssengerData.isLogin = data.data.isLogin
+      window.ScratchssengerData.session = data.data.session
+      window.ScratchssengerData.chats = data.data.chats
+    }
+  }
 }
 
 export { createApp as default, startPolling }
