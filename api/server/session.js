@@ -1,6 +1,6 @@
-import { read } from "../apis/db.js"
-import { chatsIndex, usersIndex } from "../help/data.js"
-import { User, Result } from "../help/class.js"
+import { read } from "../../src/apis/db.js"
+import { chatsIndex, usersIndex } from "../../src/help/data.js"
+import { User, Result } from "../../src/help/class.js"
 
 export default async (req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*')
