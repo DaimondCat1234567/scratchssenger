@@ -84,6 +84,8 @@ const createApp = async (loadingV, screen) => {
 
 window.scratchssenger.polling = new Worker('./js/web-client/polling.js')
 window.scratchssenger.polling.postMessage({ type: "setWait", wait: 5 })
+window.scratchssenger.polling.postMessage({ type: "localStorage.set", key: "login", value: localStorage.getItem("login") })
+window.scratchssenger.polling.postMessage({ type: "localStorage.set", key: "session", value: localStorage.getItem("session") })
 window.scratchssenger.polling.onmessage = (data) => {
   console.log("new Message")
   console.log(data)

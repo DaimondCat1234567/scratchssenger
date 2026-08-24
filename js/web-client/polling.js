@@ -1,13 +1,17 @@
 let wait = 5
 let LocalData = {}
+let localStorage = {
+    login: "",
+    session: ""
+}
 
 try {
     setTimeout(async () => {
         const oSession = await fetch("https://dcgapi.loca.lt/scratchssenger/session/", {
             method: "POST",
             body: JSON.stringify({
-                login: localStorage.getItem("login"),
-                session: localStorage.getItem("session")
+                login: localStorage.login,
+                session: localStorage.session
             })
         })
         LocalData.isLogin = oSession.ok
@@ -15,12 +19,12 @@ try {
         const chats = await(await fetch("https://dcgapi.loca.lt/scratchssenger/session/chats/", {
             method: "POST",
             body: JSON.stringify({
-                login: localStorage.getItem("login"),
-                session: localStorage.getItem("session")
+                login: localStorage.login,
+                session: localStorage.session
             })
         })).json()
         LocalData.session = session
-        LocalData.session = chats
+        LocalData.chats = chats
         self.postMessage({
             type: "updateData",
             data: LocalData
@@ -35,5 +39,8 @@ try {
 self.onmessage = (data) => {
     if (data.type === "setWait") {
         wait = data.wait
+    }
+    if (data.type === "localStorage") {
+        localStorage[data.key] = data.value
     }
 }
