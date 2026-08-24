@@ -82,7 +82,7 @@ const createApp = async (loadingV, screen) => {
   }, 1000)
 }
 
-window.scratchssenger.polling = new Worker('./polling.js')
+window.scratchssenger.polling = new Worker('./js/web-client/polling.js')
 window.scratchssenger.polling.postMessage({ type: "setWait", wait: 5 })
 window.scratchssenger.polling.onmessage = (data) => {
   console.log("new Message")
