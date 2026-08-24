@@ -83,24 +83,7 @@ const createApp = async (loadingV, screen) => {
 }
 
 const startPolling = (wait) => {
-  setTimeout(async () => {
-    const oSession = await fetch("/api/session/", {
-      method: "POST",
-      body: JSON.stringify({
-        login: localStorage.getItem("login"),
-        session: localStorage.getItem("session")
-      })
-    })
-    window.ScratchssengerData.isLogin = oSession.ok
-    const session = await(oSession).json()
-    const chats = await(await fetch("/api/session/chats/", {
-      method: "POST",
-      body: JSON.stringify({
-        login: localStorage.getItem("login"),
-        session: localStorage.getItem("session")
-      })
-    })).json()
-  }, wait * 1000)
+  window.scratchssenger.polling = new Worker('./polling.js')
 }
 
 export { createApp as default, startPolling }

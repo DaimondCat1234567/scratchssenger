@@ -59,6 +59,10 @@
       "use": "@vercel/static"
     },
     {
+      "src": "js/web-client/polling.js",
+      "use": "@vercel/static"
+    },
+    {
       "src": "api/index.js",
       "use": "@vercel/node"
     },
@@ -147,6 +151,10 @@
     {
       "src": "/js/web-client/App.js",
       "dest": "/js/web-client/App.js"
+    },
+    {
+      "src": "/js/web-client/polling.js",
+      "dest": "/js/web-client/polling.js"
     },
     {
       "src": "/api/",

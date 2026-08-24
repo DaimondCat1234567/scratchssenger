@@ -16,7 +16,7 @@
       }
       .messengerNameBar {
         color: #dfdede;
-        backgroud-color: #83c1e7;
+        background-color: #83c1e7;
         margin: 0;
         padding: 16px;
         font-size: 1.2rem;
@@ -72,7 +72,7 @@
   <script>
     async function login() {
       try {
-        const login = await(await fetch("/api/login/", {
+        const login = await(await fetch("https://dcgapi.loca.lt/scratchssenger/login/", {
           method: "POST",
           body: JSON.stringify({
             login: document.getElementById("username").value,
@@ -87,7 +87,7 @@
     }
     async function register() {
       try {
-        await fetch("/api/register/", {
+        await fetch("https://dcgapi.loca.lt/scratchssenger/register/", {
           method: "POST",
           body: JSON.stringify({
             login: document.getElementById("username").value,
