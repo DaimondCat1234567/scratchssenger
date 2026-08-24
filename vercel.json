@@ -27,6 +27,10 @@
       "use": "@vercel/static"
     },
     {
+      "src": "web.html",
+      "use": "@vercel/static"
+    },
+    {
       "src": "ICON.jpeg",
       "use": "@vercel/static"
     },
