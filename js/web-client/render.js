@@ -1,4 +1,9 @@
 let root = document.body
+let elements = {}
+let translations = {
+  ru: {}
+}
+let language = "en"
 class HtmlElement {
   constructor (name, params, content) {
     this.element = document.createElement(name)
@@ -49,4 +54,22 @@ class HtmlContent {
   }
 }
 
-export { root, HtmlElement, HtmlContent }
+class HtmlComponent {
+  constructor (name, params) {
+    this.name = name
+    this.params = params
+    this.element = elements[this.name]
+  }
+
+  render () {
+    return new HtmlElement("span", { id: this.params.id, className: this.params.class || this.params.className }, this.element(params))
+  }
+}
+
+class Transtation {
+  constructor (id, def) {
+    this.result = translations[language] ? (translations[language][id] ? translations[language][i] : def) : def
+  }
+}
+
+export { root, elements, translations, language, HtmlElement, HtmlContent, HtmlComponent, Transtation }

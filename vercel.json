@@ -63,6 +63,14 @@
       "use": "@vercel/static"
     },
     {
+      "src": "js/web-client/ui-components.js",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "js/web-client/translations.js",
+      "use": "@vercel/static"
+    },
+    {
       "src": "api/index.js",
       "use": "@vercel/node"
     },
@@ -155,6 +163,14 @@
     {
       "src": "/js/web-client/polling.js",
       "dest": "/js/web-client/polling.js"
+    },
+    {
+      "src": "/js/web-client/ui-components.js",
+      "dest": "/js/web-client/ui-components.js"
+    },
+    {
+      "src": "/js/web-client/translations.js",
+      "dest": "/js/web-client/translations.js"
     },
     {
       "src": "/api/",

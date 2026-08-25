@@ -5,7 +5,7 @@ class User {
     this.username = json.username || `id${json.id || null}`
     this.password = json.password || ""
     this.id = json.id || null
-    this.session = json.session || String(new Session({ user: json.username }))
+    this.session = json.session || new Session({ user: json.username })
     this.chats = json.chats || []
     this.role = json.role || "user"
     this.joined = json.joined || String(new Date())
@@ -14,6 +14,7 @@ class User {
     this.devices = Array(json.devices || [])
     this.warns = Array(json.warns || [])
     this.notifications = Array(json.notifications || [])
+    this.settings = json.settings || new UserSettings()
   }
   async setToken() {
     this.session = await this.session.token()
@@ -34,7 +35,8 @@ class User {
       name: this.name,
       devices: this.devices,
       warns: this.warns,
-      notifications: this.notifications
+      notifications: this.notifications,
+      settings: this.settings.JSON()
     }
   }
   newActive () {
@@ -128,4 +130,20 @@ class Message {
   }
 }
 
-export { User, Chat, Result, Session, Message }
+class UserSettings {
+  constructor (json) {
+    this.chats = json.chats || {
+      notifications: {}
+    }
+    this.theme = json.theme || 'light'
+  }
+
+  JSON () {
+    return {
+      chats: this.chats,
+      theme: this.theme
+    }
+  }
+}
+
+export { User, Chat, Result, Session, Message, UserSettings }

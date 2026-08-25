@@ -1,5 +1,9 @@
-import { HtmlElement, HtmlContent } from "./render.js"
+import { elements, translations, language, HtmlElement, HtmlContent, HtmlComponent, Transtation } from "./render.js"
 import { AppName } from "../metadata.js"
+import { ButtonComponent, DateComponent, MessageComponent } from "./ui-components.js"
+import genTranslations from "./translations.js"
+
+translations.ru = genTranslations("russian")
 
 window.ScratchssengerData = {}
 window.scratchssenger = {}
@@ -40,22 +44,22 @@ const createApp = async (loadingV, screen) => {
       new HtmlElement("div", { id: "messageInput", className: "messageInput" }, messageInput).render()
     ], "div")
     loginBar = new HtmlContent([
-      new HtmlElement("h1", { style: "text-align: center" }, "Login").render(),
+      new HtmlElement("h1", { style: "text-align: center" }, new Transtation("login.label", "Login").result).render(),
       new HtmlElement("label", { for: "username" }, "Username: ").render(),
       new HtmlElement("input", { id: "username" }, "").render(),
       new HtmlElement("label", { for: "password" }, "<br>Password: ").render(),
       new HtmlElement("input", { id: "password", type: "password" }, "").render(),
-      new HtmlElement("button", { onclick: handleLogin }, "Login").render(),
-      new HtmlElement("button", { onclick: handleLoginToRegister }, "Create account").render()
+      new HtmlElement("button", { onclick: handleLogin }, new Transtation("login.button", "Login").result).render(),
+      new HtmlElement("button", { onclick: handleLoginToRegister }, new Transtation("login.regbutton", "Create account").result).render()
     ], "div")
     registerBar = new HtmlContent([
-      new HtmlElement("h1", { style: "text-align: center" }, "Register").render(),
+      new HtmlElement("h1", { style: "text-align: center" }, new Transtation("register.label", "Register").result).render(),
       new HtmlElement("label", { for: "username" }, "Username: ").render(),
       new HtmlElement("input", { id: "username" }, "").render(),
       new HtmlElement("label", { for: "password" }, "<br>Password: ").render(),
       new HtmlElement("input", { id: "password", type: "password" }, "").render(),
-      new HtmlElement("button", { onclick: handleRegister }, "Register").render(),
-      new HtmlElement("button", { onclick: handleRegisterToLogin }, "Login account").render()
+      new HtmlElement("button", { onclick: handleRegister }, new Transtation("register.button", "Register").result).render(),
+      new HtmlElement("button", { onclick: handleRegisterToLogin }, new Transtation("register.loginbutton", "Login account").result).render()
     ], "div")
     leftBar.render()
     rightBar.render()
