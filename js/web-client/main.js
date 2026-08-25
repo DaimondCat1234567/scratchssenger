@@ -32,6 +32,4 @@ let bodyContent = new HtmlContent([
 bodyContent.render()
 
 root.innerHTML = String(bodyContent)
-window.ScratchssengerData = {}
-window.scratchssenger = {}
 startApp(Load, root)
