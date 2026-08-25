@@ -1,6 +1,9 @@
 import { HtmlElement, HtmlContent } from "./render.js"
 import { AppName } from "../metadata.js"
 
+window.ScratchssengerData = {}
+window.scratchssenger = {}
+
 const createApp = async (loadingV, screen) => {
   let chatsBar = loadingV
   let chatName = loadingV
