@@ -10,7 +10,7 @@ try {
         const oSession = await fetch("https://dcgapi.loca.lt/scratchssenger/session/", {
             method: "POST",
             head: {
-                "bypass-tunnel-reminder": "any value (lol)"
+                "bypass-tunnel-reminder": true
             },
             body: JSON.stringify({
                 login: localStorage.login,
@@ -21,6 +21,9 @@ try {
         const session = await(oSession).json()
         const chats = await(await fetch("https://dcgapi.loca.lt/scratchssenger/session/chats/", {
             method: "POST",
+            head: {
+                "bypass-tunnel-reminder": true
+            },
             body: JSON.stringify({
                 login: localStorage.login,
                 session: localStorage.session
@@ -43,7 +46,7 @@ self.onmessage = (data) => {
     if (data.type === "setWait") {
         wait = data.wait
     }
-    if (data.type === "localStorage") {
+    if (data.type === "localStorage.set") {
         localStorage[data.key] = data.value
     }
 }
