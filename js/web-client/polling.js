@@ -9,6 +9,9 @@ try {
     setTimeout(async () => {
         const oSession = await fetch("https://dcgapi.loca.lt/scratchssenger/session/", {
             method: "POST",
+            head: {
+                "bypass-tunnel-reminder": "any value (lol)"
+            },
             body: JSON.stringify({
                 login: localStorage.login,
                 session: localStorage.session
