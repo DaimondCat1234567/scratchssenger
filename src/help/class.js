@@ -2,7 +2,7 @@ import { genHash, checkHash } from "./hash.js"
 
 class User {
   constructor (json) {
-    this.username = json.username || "unknown"
+    this.username = json.username || `id${json.id || null}`
     this.password = json.password || ""
     this.id = json.id || null
     this.session = json.session || String(new Session({ user: json.username }))
