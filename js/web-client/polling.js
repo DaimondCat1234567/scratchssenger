@@ -9,7 +9,7 @@ try {
     setTimeout(async () => {
         const oSession = await fetch("https://dcgapi.loca.lt/scratchssenger/session/", {
             method: "POST",
-            head: {
+            headers: {
                 "bypass-tunnel-reminder": true
             },
             body: JSON.stringify({
@@ -21,7 +21,7 @@ try {
         const session = await(oSession).json()
         const chats = await(await fetch("https://dcgapi.loca.lt/scratchssenger/session/chats/", {
             method: "POST",
-            head: {
+            headers: {
                 "bypass-tunnel-reminder": true
             },
             body: JSON.stringify({
